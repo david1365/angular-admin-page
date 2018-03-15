@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dk-wrapper',
+  selector: 'dk-wrapper',
   templateUrl: './dk-wrapper.component.html',
   styleUrls: ['./dk-wrapper.component.css']
 })

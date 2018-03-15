@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DkWrapperComponent } from "./components/dk-wrapper/dk-wrapper.component";
 
 @Component({
   selector: 'app-root',
