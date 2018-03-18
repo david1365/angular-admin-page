@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('routing-test App', () => {
+describe('idea-angular-app App', () => {
   let page: AppPage;
 
   beforeEach(() => {

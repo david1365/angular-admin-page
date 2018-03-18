@@ -5,9 +5,7 @@ import { DkWrapperComponent } from './dk-wrapper/dk-wrapper.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    DkWrapperComponent,
-    DkHeaderComponent
+    CommonModule
   ],
   exports: [
     DkWrapperComponent,
@@ -15,6 +13,5 @@ import { DkWrapperComponent } from './dk-wrapper/dk-wrapper.component';
     ],
   declarations: [DkHeaderComponent, DkWrapperComponent]
 })
-export class daakModule {
-
+export class DaakModule {
 }
