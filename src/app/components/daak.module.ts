@@ -4,6 +4,7 @@ import { DkHeaderComponent } from './dk-header/dk-header.component';
 import { DkWrapperComponent } from './dk-wrapper/dk-wrapper.component';
 import { DkCircleButtonComponent } from './dk-circle-button/dk-circle-button.component';
 import { DkSearchComponent } from './dk-search/dk-search.component';
+import { DkDesktopIconComponent } from './dk-desktop-icon/dk-desktop-icon.component';
 
 @NgModule({
   imports: [
@@ -13,9 +14,10 @@ import { DkSearchComponent } from './dk-search/dk-search.component';
     DkWrapperComponent,
     DkHeaderComponent,
     DkCircleButtonComponent,
-    DkSearchComponent
-    ],
-  declarations: [DkHeaderComponent, DkWrapperComponent, DkCircleButtonComponent, DkSearchComponent]
+    DkSearchComponent,
+    DkDesktopIconComponent
+  ],
+  declarations: [DkHeaderComponent, DkWrapperComponent, DkCircleButtonComponent, DkSearchComponent, DkDesktopIconComponent]
 })
 export class DaakModule {
 }

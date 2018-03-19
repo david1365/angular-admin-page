@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-dk-search',
+  selector: 'dk-search',
   templateUrl: './dk-search.component.html',
   styleUrls: ['./dk-search.component.css']
 })

@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./dk-circle-button.component.css']
 })
 export class DkCircleButtonComponent implements OnInit {
-  @Input('type') type: string;
+  @Input('icon') icon: string;
 
   constructor() { }
 

@@ -17,7 +17,7 @@
   display: none;
 }
 
-@media (max-width: 368px){
+@media (max-width: 418px){
   .daak-search-circle-menu {
     width: calc(92vw - 150px);
   }
@@ -38,6 +38,7 @@
 @media (max-width: 467px){
   .daak-search-circle-menu{
     display: inline-block;
+    float: right;
   }
 }
 
