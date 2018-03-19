@@ -129,7 +129,7 @@
 	padding-right: 1px;
 }
 
-.daak-container{
+.daak-desktop{
 	overflow: hidden;
 	background-image: url("../images/back_image.png");
 	background-size: 100px;
@@ -139,7 +139,7 @@
 	display:block;
 	/*padding-top: 125px;*/
 	/*margin-top: -100px;*/
-	/*text-align: center;*/
+	text-align: center;
 
     height: -webkit-calc(100% - 63px);
     height: -moz-calc(100% - 63px);
@@ -309,7 +309,7 @@ a:hover, a:FOCUS, a:VISITED{
 		font-size: 40px;
 	}
 
-	.daak-container {
+	.daak-desktop {
 		margin-top: 69px;
 
         height: -webkit-calc(100% - 133px);
