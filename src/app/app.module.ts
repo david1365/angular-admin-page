@@ -8,7 +8,7 @@ import { DaakModule } from './components/daak.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

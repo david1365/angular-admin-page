@@ -11,24 +11,17 @@
         </ul>
       </div>
 
-      <input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-small-screen" placeholder="جستجو"/>
-
+      <!--<input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-small-screen" placeholder="جستجو"/>-->
+      <app-dk-search type="daak-search-small-screen"></app-dk-search>
 
       <section id="daak-circle-menu">
-        <section class="daak-circle">
-          <span class="fa fa-power-off"></span>
-        </section>
+        <dk-circle-button type="fa-power-off"></dk-circle-button>
 
+        <dk-circle-button type="fa-envelope-o"></dk-circle-button>
 
-        <section id='daak-message' class="daak-circle">
-          <span class="fa fa-envelope-o"></span>
-        </section>
-
-        <input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-circle-menu" placeholder="جستجو"/>
-
-        <section id="daak-menu-icon" class="daak-circle">
-          <span class="fa fa-bars" aria-hidden="true"></span>
-        </section>
+        <!--<input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-circle-menu" placeholder="جستجو"/>-->
+        <app-dk-search type="daak-search-circle-menu"></app-dk-search>
+        <dk-circle-button type="fa-bars"></dk-circle-button>
       </section>
 
       <section id="sidebar-top"></section>

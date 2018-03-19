@@ -32,66 +32,11 @@
 }
 
 .daak-wrapper header > nav {
-  margin-top: -10px;
+  margin-top: -8px;
 }
 
 .daak-brand {
 	border-left: 1px rgb(111, 93, 81) dashed;
-}
-
-.daak-search {
-	border-radius: 50px;
-	background-color: #515151;
-	border-color: #111111;
-	border: 1px solid #111111;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
-	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
-	box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
-	height: 28px;
-	padding: 3px 8px;
-	color: white;
-	margin-top: 8px;
-	margin-right: 3px;
-}
-
-.daak-circle {
-	color: #fff;
-	/*! margin-right: 10px; */
-	background: #262626 repeat-x left bottom;
-	background-image: none;
-	background-image: -ms-linear-gradient(top, #333333, #262626);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#262626));
-	background-image: -webkit-linear-gradient(top, #333333, #262626);
-	background-image: -o-linear-gradient(top, #333333, #262626);
-	background-image: -moz-linear-gradient(top, #333333, #262626);
-	background-image: linear-gradient(top, #333333, #262626);
-	border: 1px solid #000;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 100%;
-	padding: 4px 10px;
-	float: left;
-	margin-top: 3px;
-	margin-left: 10px;
-}
-
-.daak-circle > span {
-	margin-top: 6px;
-}
-
-.daak-circle:active {
-	background: #222;
-
-	-webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.25);
-	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.25);
-}
-
-.daak-circle, .daak-user {
-	cursor:pointer;
 }
 
 /*.agahi-img-container {*/
@@ -166,10 +111,7 @@
 
 #daak-circle-menu {
 	float: left;
-}
-
-.daak-search-circle-menu {
-	display: none;
+  margin-right: 5px;
 }
 
 /*#logo{*/
@@ -368,12 +310,6 @@ a:hover, a:FOCUS, a:VISITED{
 	}
 }
 
-@media (max-width: 368px){
-	.daak-search-circle-menu {
-		width: calc(92vw - 150px);
-	}
-}
-
 @media (max-width: 319px){
 	.daak-brand {
 		margin-top: 3.5vw;
@@ -405,29 +341,13 @@ a:hover, a:FOCUS, a:VISITED{
 	}
 }
 
-@media (max-width: 669px){
-	.daak-search-small-screen{
-		width: 150px;
-	}
-}
-
-@media (max-width: 616px){
-	.daak-search-small-screen{
-		display: none;
-	}
-}
-
 @media (max-width: 467px){
 	.daak-brand{
 		/* 		display: block; */
 		/* 		width: 100%; */
 	}
 
-	.daak-search-circle-menu{
-		display: inline-block;
-	}
-
-	.daak-container-icon span {
+  .daak-container-icon span {
 		font-size: 40px;
 	}
 
@@ -529,10 +449,6 @@ a:hover, a:FOCUS, a:VISITED{
 /*}*/
 
 @media (max-width: 231px){
-	.daak-search-circle-menu {
-		display: none;
-	}
-
 	.agahi-img-container{
 		clear: both;
 		width: 100%;
