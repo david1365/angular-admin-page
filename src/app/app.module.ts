@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { DaakModule } from './components/daak.module';
+import { DaakModule } from './daak/daak.module';
 
 
 @NgModule({

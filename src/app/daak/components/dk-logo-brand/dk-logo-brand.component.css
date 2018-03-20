@@ -1,0 +1,36 @@
+.daak-logo {
+  height: 45px;
+  width: 50px;
+  float: right;
+  margin-right: 10px;
+}
+
+.daak-brand {
+  color: white;
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding-left: 5px;
+  border-left: 1px rgb(111, 93, 81) dashed;
+}
+
+@media (max-width: 319px){
+  .daak-brand {
+    margin-top: 3.5vw;
+    font-size: 5vw;
+  }
+}
+
+
+@media (max-width: 279px){
+  .daak-brand {
+    max-width: calc(96vw - 70px);
+    font-size: 15px;
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

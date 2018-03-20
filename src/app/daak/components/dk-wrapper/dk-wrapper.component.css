@@ -35,7 +35,7 @@
   padding: 5px 5px 5px 10px;
   /*! background-color: rgba(68, 68, 68, 0.75); */
   border-top: 1px solid #222;
-  background-image: url("../../../assets/daak/images/menu-bg.png");
+  background-image: url("../../../../assets/daak/images/menu-bg.png");
   background-repeat: repeat-y;
 
   right: 0px;
@@ -46,7 +46,8 @@
 }
 
 .daak-vertical-menu {
-  background-image: url("../../../assets/daak/images/linen.png");
+  background-image: url("../../../../assets/daak/images/linen.png");
+  text-align: justify;
 }
 
 .daak-vertical-menu li{
@@ -60,7 +61,7 @@
 }
 
 .daak-vertical-sub-menu > ul > .daak-vertical-sub-menu {
-  background-image: url("../../../assets/daak/images/linen.png");
+  background-image: url("../../../../assets/daak/images/linen.png");
   padding: 12px 0px 12px;
   border-bottom: 1px solid rgb(56, 57, 57);
   border-top: 1px solid #4f4f4f;
