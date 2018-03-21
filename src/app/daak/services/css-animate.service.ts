@@ -10,18 +10,41 @@ export class CssAnimateService {
   }
 
   cssAnimate(target, x, func?) {
-    console.log(target.classList);
-    // const elem = target.nativeElement;
-    target.classList.add(x + ' animated');
-    // this.renderer.listen(target, 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-    //   (event) => {
-    //     target.removeClass('animated');
-    //     target.removeClass(x);
-    //
-    //     if (func) {
-    //       func(target);
-    //     }
-    //   });
+    var oldAttr = target.getAttribute('class');
+    var removeClass = function (target, func) {
+      target.classList.remove('animated');
+      target.classList.remove(x);
+
+      if (func) {
+        func(target);
+      }
+    }
+
+    target.setAttribute('class', oldAttr + ' ' + x + ' animated');
+    this.renderer.listen(target, 'webkitAnimationEnd',
+      (event) => {
+        removeClass(target, func);
+    });
+
+    this.renderer.listen(target, 'mozAnimationEnd',
+      (event) => {
+        removeClass(target, func);
+    });
+
+    this.renderer.listen(target, 'MSAnimationEnd',
+      (event) => {
+        removeClass(target, func);
+    });
+
+    this.renderer.listen(target, 'oanimationend',
+      (event) => {
+        removeClass(target, func);
+      });
+
+    this.renderer.listen(target, 'animationend',
+      (event) => {
+        removeClass(target, func);
+      });
   }
 
 }

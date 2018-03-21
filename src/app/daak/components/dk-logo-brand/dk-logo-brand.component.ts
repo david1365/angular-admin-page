@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {CssAnimateService} from '../../services/css-animate.service';
 
 @Component({
@@ -9,15 +9,16 @@ import {CssAnimateService} from '../../services/css-animate.service';
 export class DkLogoBrandComponent implements OnInit, AfterViewInit {
   @Input('icon') icon: string;
   @Input('title') title: string;
-  @ViewChild('brand') brand: TemplateRef<any>;
-  constructor(private cssAnimateService: CssAnimateService) { }
+  @ViewChild('brand') brand: ElementRef;
+  constructor(private cssAnimateService: CssAnimateService, private renderer: Renderer2) { }
 
   ngOnInit() { }
 
   ngAfterViewInit() {
-      console.log(this.brand.elementRef.innerHTML);
-      // const elem = this.brand.nativeElement;
-      // this.cssAnimateService.cssAnimate(elem, 'bounceIn');
+      const elem = this.brand.nativeElement;
+      this.renderer.listen(elem,'mouseenter', (event) => {
+        this.cssAnimateService.cssAnimate(elem, 'bounceIn');
+      });
   }
 
 }
