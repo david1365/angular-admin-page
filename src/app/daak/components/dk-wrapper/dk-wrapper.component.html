@@ -8,18 +8,9 @@
         </ul>
       </div>
 
-      <!--<input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-small-screen" placeholder="جستجو"/>-->
       <dk-search type="daak-search-small-screen"></dk-search>
 
-      <section id="daak-circle-menu">
-        <dk-circle-button icon="fa-power-off"></dk-circle-button>
-
-        <dk-circle-button icon="fa-envelope-o"></dk-circle-button>
-
-        <!--<input daak-type="container-search" daak-container="daak-desktop" class="daak-search daak-search-circle-menu" placeholder="جستجو"/>-->
-        <dk-search type="daak-search-circle-menu"></dk-search>
-        <dk-circle-button icon="fa-bars"></dk-circle-button>
-      </section>
+      <dk-circle-menu></dk-circle-menu>
 
       <section id="sidebar-top"></section>
     </nav>
@@ -84,11 +75,8 @@
 
   <!--TODO: data-url to da-url and use bundle-->
   <div id="vertical-menu" class="daak-vertical-menu-container no-select">
-    <section class="daak-extea-menu">
-      <img  class="daak-user" src="assets/daak/images/user.png">
-      <section class="daak-user-name">داود اکبری </section>
-      <input class="daak-search" type="text" placeholder="جستجو"/>
-    </section>
+    <dk-user-details image="assets/daak/images/user.png" title="داود اکبری"></dk-user-details>
+
     <ul class="daak-vertical-menu">
       <li class="daak-vertical-sub-menu">
         <a href="#"><span class="glyphicon glyphicon-flag"></span>گروه</a>

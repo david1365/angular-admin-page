@@ -1,7 +1,7 @@
-import {Injectable, Renderer2, RendererFactory2, TemplateRef} from '@angular/core';
+import {Injectable, Renderer2, RendererFactory2} from '@angular/core';
 
 @Injectable()
-export class CssAnimateService {
+export class DaakService {
 
   private renderer: Renderer2;
 
@@ -10,6 +10,7 @@ export class CssAnimateService {
   }
 
   cssAnimate(target, x, func?) {
+    target = target.nativeElement;
     var oldAttr = target.getAttribute('class');
     var removeClass = function (target, func) {
       target.classList.remove('animated');

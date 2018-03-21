@@ -6,7 +6,9 @@ import {DkSearchComponent} from './components/dk-search/dk-search.component';
 import {DkDesktopIconComponent} from './components/dk-desktop-icon/dk-desktop-icon.component';
 import {DkLogoBrandComponent} from './components/dk-logo-brand/dk-logo-brand.component';
 import {DkHeaderComponent} from './components/dk-header/dk-header.component';
-import {CssAnimateService} from './services/css-animate.service';
+import {DaakService} from './services/daak.service';
+import { DkUserDetailsComponent } from './components/dk-user-details/dk-user-details.component';
+import { DkCircleMenuComponent } from './components/dk-circle-menu/dk-circle-menu.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import {CssAnimateService} from './services/css-animate.service';
     DkCircleButtonComponent,
     DkSearchComponent,
     DkDesktopIconComponent,
-    DkLogoBrandComponent
+    DkLogoBrandComponent,
+    DkUserDetailsComponent,
+    DkCircleMenuComponent
   ],
   declarations: [
     DkHeaderComponent,
@@ -26,10 +30,12 @@ import {CssAnimateService} from './services/css-animate.service';
     DkCircleButtonComponent,
     DkSearchComponent,
     DkDesktopIconComponent,
-    DkLogoBrandComponent
+    DkLogoBrandComponent,
+    DkUserDetailsComponent,
+    DkCircleMenuComponent
   ],
   providers: [
-    CssAnimateService
+    DaakService
   ],
 })
 export class DaakModule {

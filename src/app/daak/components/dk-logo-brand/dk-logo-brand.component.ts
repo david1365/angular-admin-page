@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
-import {CssAnimateService} from '../../services/css-animate.service';
+import {DaakService} from '../../services/daak.service';
 
 @Component({
   selector: 'dk-logo-brand',
@@ -10,14 +10,14 @@ export class DkLogoBrandComponent implements OnInit, AfterViewInit {
   @Input('icon') icon: string;
   @Input('title') title: string;
   @ViewChild('brand') brand: ElementRef;
-  constructor(private cssAnimateService: CssAnimateService, private renderer: Renderer2) { }
+  constructor(private daakService: DaakService, private renderer: Renderer2) { }
 
   ngOnInit() { }
 
   ngAfterViewInit() {
       const elem = this.brand.nativeElement;
       this.renderer.listen(elem,'mouseenter', (event) => {
-        this.cssAnimateService.cssAnimate(elem, 'bounceIn');
+        this.daakService.cssAnimate(this.brand, 'bounceIn');
       });
   }
 

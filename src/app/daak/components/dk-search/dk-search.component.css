@@ -11,6 +11,7 @@
   color: white;
   margin-top: 8px;
   margin-right: 3px;
+  font-size: smaller;
 }
 
 .daak-search:focus {outline:none !important;}

@@ -204,12 +204,6 @@
   text-align: justify;
 }
 
-.daak-extea-menu {
-
-  margin-bottom: 10px;
-  text-align: center;
-}
-
 @media (max-width: 505px){
   .daak-search-menu{
     min-width: 100% !important;

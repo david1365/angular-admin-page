@@ -1,0 +1,21 @@
+.daak-user{
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 100%;
+  /*! background-color: silver; */
+  cursor:pointer;
+}
+
+.daak-user-name {
+  color: #ff7e00;
+  margin-top: 5px;
+}
+
+.daak-extea-menu {
+  margin-bottom: 10px;
+  text-align: center;
+}

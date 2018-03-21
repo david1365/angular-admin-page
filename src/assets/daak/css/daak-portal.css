@@ -73,29 +73,6 @@
 	position: absolute;
 }*/
 
-
-
-.daak-user{
-	border: 1px solid #000;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 100%;
-	/*! background-color: silver; */
-}
-
-.daak-user-name {
-	color: #ff7e00;
-	margin-top: 5px;
-}
-
-#daak-circle-menu {
-	float: left;
-  margin-right: 5px;
-}
-
 /*#logo{*/
 /*height: 117px;*/
 /*width: 292.5px;*/
@@ -286,18 +263,6 @@ a:hover, a:FOCUS, a:VISITED{
         height: calc(100% - 133px);
   	}
 
-	#daak-circle-menu{
-		display: block !important;
-		width: 100%;
-		background-image: url("../images/linen.png");
-		margin-top: 12px;
-		padding: 10px;
-		clear: both;
-		/*text-align: center;*/
-		/*! border-bottom: 1px solid #222; */
-		/* 		box-shadow: 0 4px 4px 3px #888888; */
-		margin-bottom: -4px;
-	}
 	.daak-circle{
 		float: right;
 	}
