@@ -1,5 +1,5 @@
-<section class="daak-wrapper">
-  <dk-header></dk-header>
+<section class="daak-portal">
+  <dk-header (onMenu)="doMenu()"></dk-header>
 
   <section id='daak-desktop' class="daak-desktop no-select" >
 
@@ -43,5 +43,5 @@
     <!--</div>-->
   </section>
 
-  <dk-vertical-menu></dk-vertical-menu>
+  <dk-vertical-menu #vmenu></dk-vertical-menu>
 </section>

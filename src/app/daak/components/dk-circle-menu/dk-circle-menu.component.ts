@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'dk-circle-menu',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dk-circle-menu.component.css']
 })
 export class DkCircleMenuComponent implements OnInit {
+  @Output() onMenu = new EventEmitter();
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
+  }
+
+  doMenu(event) {
+    this.onMenu.emit(event);
   }
 
 }

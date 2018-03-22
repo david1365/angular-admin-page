@@ -1,12 +1,13 @@
 .daak-circle-menu{
   float: left;
+  padding-left: 10px;
 }
 
 .sidebar-top{
   display: none;
 }
 
-@media (max-width: 467px){
+@media (max-width: 617px){
   .daak-circle-menu {
     display: block !important;
     width: 100%;

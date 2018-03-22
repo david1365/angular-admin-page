@@ -1,4 +1,4 @@
-<header>
+<header class="daak-header">
   <nav>
     <dk-logo-brand icon="assets/daak/images/logo.png" title="سامانه ی آموزشی"></dk-logo-brand>
 
@@ -9,6 +9,6 @@
 
     <dk-search type="daak-search-small-screen"></dk-search>
 
-    <dk-circle-menu></dk-circle-menu>
+    <dk-circle-menu (onMenu)="doMenu($event)"></dk-circle-menu>
   </nav>
 </header>

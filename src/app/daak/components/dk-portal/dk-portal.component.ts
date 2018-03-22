@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {DkVerticalMenuComponent} from '../dk-vertical-menu/dk-vertical-menu.component';
 
 @Component({
   selector: 'dk-portal',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dk-portal.component.css']
 })
 export class DkPortalComponent implements OnInit {
-
+  @ViewChild('vmenu') vMenu: ElementRef<DkVerticalMenuComponent>;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  doMenu() {
+    this.vMenu.show();
+    // this.vMenu.nativeElement.style.display = 'block';
   }
 
 }
