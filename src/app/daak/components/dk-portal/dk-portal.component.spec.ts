@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DkWrapperComponent } from './dk-wrapper.component';
+import { DkPortalComponent } from './dk-portal.component';
 
-describe('DkWrapperComponent', () => {
-  let component: DkWrapperComponent;
-  let fixture: ComponentFixture<DkWrapperComponent>;
+describe('DkPortalComponent', () => {
+  let component: DkPortalComponent;
+  let fixture: ComponentFixture<DkPortalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DkWrapperComponent ]
+      declarations: [ DkPortalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DkWrapperComponent);
+    fixture = TestBed.createComponent(DkPortalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

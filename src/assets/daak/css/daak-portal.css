@@ -187,10 +187,6 @@ a:hover, a:FOCUS, a:VISITED{
 /*text-shadow: 2px 2px 3px back;*/
 /*}*/
 
-#sidebar-top{
-	display: none;
-}
-
 /*#sidebar-bottom{*/
 	/*display: inline-block;*/
 	/*max-width: none;*/
@@ -269,23 +265,6 @@ a:hover, a:FOCUS, a:VISITED{
 
 	#daak-menu-icon{
 		float: left;
-	}
-
-	#sidebar-top
-	{
-		display: inline-block;
-		max-width: none;
-		width: 100%;
-		position: relative;
-		float: none;
-		/*! display: block; */
-		border-top: 1px solid #222;
-		padding-bottom: 8px;
-		background-image: url(../images/linen.png);
-		-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
-		-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
-		margin-top: -16px;
 	}
 }
 
