@@ -14,9 +14,10 @@ export class DkVerticalMenuComponent implements OnInit {
   }
 
   show() {
-    var menu = this.vMenu.nativeElement;
-    menu.style.display = 'block';
-    this.daakService.cssAnimate(this.vMenu, 'slideInRight');
+    this.daakService.show(this.vMenu, 'slideInRight');
   }
 
+  hide() {
+    this.daakService.hide(this.vMenu, 'slideOutRight');
+  }
 }

@@ -7,6 +7,7 @@ import {DkVerticalMenuComponent} from '../dk-vertical-menu/dk-vertical-menu.comp
   styleUrls: ['./dk-portal.component.css']
 })
 export class DkPortalComponent implements OnInit {
+  private showedVMenu: boolean = false;
   @ViewChild('vmenu') vMenu: DkVerticalMenuComponent;//ElementRef<DkVerticalMenuComponent>;
   constructor() { }
 
@@ -14,8 +15,15 @@ export class DkPortalComponent implements OnInit {
   }
 
   doMenu() {
-    this.vMenu.show();
-    // this.vMenu.nativeElement.style.display = 'block';
+    // alert(this.showedVMenu)
+    if (this.showedVMenu == false) {
+      this.vMenu.show();
+      this.showedVMenu = true;
+    }
+    else {
+      this.vMenu.hide();
+      this.showedVMenu = false;
+    }
   }
 
 }
