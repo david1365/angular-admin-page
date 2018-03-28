@@ -20,4 +20,8 @@ export class DkVerticalMenuComponent implements OnInit {
   hide() {
     this.daakService.hide(this.vMenu, 'slideOutRight');
   }
+
+  toggle() {
+    this.daakService.toggle(this.vMenu, 'slideInRight', 'slideOutRight')
+  }
 }

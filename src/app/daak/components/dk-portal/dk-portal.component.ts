@@ -16,14 +16,16 @@ export class DkPortalComponent implements OnInit {
 
   doMenu() {
     // alert(this.showedVMenu)
-    if (this.showedVMenu == false) {
-      this.vMenu.show();
-      this.showedVMenu = true;
-    }
-    else {
-      this.vMenu.hide();
-      this.showedVMenu = false;
-    }
+    // if (this.showedVMenu == false) {
+    //   this.vMenu.show();
+    //   this.showedVMenu = true;
+    // }
+    // else {
+    //   this.vMenu.hide();
+    //   this.showedVMenu = false;
+    // }
+
+    this.vMenu.toggle()
   }
 
 }

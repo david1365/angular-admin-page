@@ -1,11 +1,8 @@
 import {ElementRef, Injectable/*, Renderer2, RendererFactory2*/} from '@angular/core';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Injectable()
 export class DaakService {
-
   // private renderer: Renderer2;
-  private cssAnimateFunction: string[];
   constructor(/*rendererFactory: RendererFactory2*/) {
     // window['daakEvent'] = {};
     // this.renderer = rendererFactory.createRenderer(null, null);
@@ -52,21 +49,26 @@ export class DaakService {
   //   }
   // }
 
-  cssAnimate(elem, x, func?) {
+  cssAnimate(elem, css, func?) {
     elem = this.realElem(elem);
-    var oldAttr = elem.getAttribute('class');
-    elem.setAttribute('class', oldAttr + ' ' + x + ' animated');
+    if ((elem.animating === false) || (elem.animating === undefined)) {
+      elem.animating = true;
 
-    // this.removelisten(elem, )
+      var oldAttr = elem.getAttribute('class');
+      elem.setAttribute('class', oldAttr + ' ' + css + ' animated');
 
-    this.one(elem, 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-      elem.classList.remove('animated');
-      elem.classList.remove(x);
+      this.one(elem, 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
+        var elem = e.target;
+        elem.classList.remove('animated');
+        elem.classList.remove(css);
 
-      if ( func ) { //alert('run func')
-        func(elem);
-      }
-    });
+        if (func) { //alert('run func')
+          func(elem);
+        }
+        // console.log(elem.animating)
+        elem.animating = false;
+      });
+    }
     // this.listen(elem, 'webkitAnimationEnd', rmCls);
     // this.listen(elem, 'mozAnimationEnd', rmCls);
     // this.listen(elem, 'MSAnimationEnd', rmCls);
@@ -75,27 +77,27 @@ export class DaakService {
 
     // this.renderer.listen(elem, 'webkitAnimationEnd',
     //   (event) => {
-    //     this.removeClass(elem, x, func);
+    //     this.removeClass(elem, css, func);
     // });
 
     // this.renderer.listen(elem, 'mozAnimationEnd',
     //   (event) => {
-    //     this.removeClass(elem, x, func);
+    //     this.removeClass(elem, css, func);
     // });
 
     // this.renderer.listen(elem, 'MSAnimationEnd',
     //   (event) => {
-    //     this.removeClass(elem, x, func);
+    //     this.removeClass(elem, css, func);
     // });
 
     // this.renderer.listen(elem, 'oanimationend',
     //   (event) => {
-    //     this.removeClass(elem, x, func);
+    //     this.removeClass(elem, css, func);
     // });
 
     // this.renderer.listen(elem, 'animationend',
     //   (event) => {
-    //     this.removeClass(elem, x, func);
+    //     this.removeClass(elem, css, func);
     //   });
   }
 
@@ -103,35 +105,48 @@ export class DaakService {
     return elem instanceof ElementRef ? elem.nativeElement : elem;
   }
 
-  show(elem, x?, func?) {
+  show(elem, css?, func?) {
     elem = this.realElem(elem);
+    elem.showed = true;
     elem.style.display = 'block';
 
-    if (x){
-      this.cssAnimate(elem, x, function (target) {
-        // this.show(target); alert(12)
-        // if( func ) {
-        //   func();
-        // }
+    if (css){
+      this.cssAnimate(elem, css, function () {
+        if( func ) {
+          func(elem);
+        }
       });
     }
   }
 
-  hide(elem, x?, func?) {
+  hide(elem, css?, func?) {
     elem = this.realElem(elem);
+    elem.showed = false;
 
-    if (x){
-      this.cssAnimate(elem, x, function (target) {
+    if (css){
+      this.cssAnimate(elem, css, function (target) {
         target.style.display = 'none';
-        // if ( func ) {
-        //   func();
-        // }
+        if ( func ) {
+          func(elem);
+        }
       });
 
       return;
     }
 
     elem.style.display = 'none';
+  }
+
+  toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?) {
+    elem = this.realElem(elem);
+    if ((elem.animating === false) || (elem.animating === undefined)) {
+      if (elem.showed) {
+        this.hide(elem, hideCss, showFunc);
+      }
+      else {
+        this.show(elem, showCss, hideFunc)
+      }
+    }
   }
 
 }
