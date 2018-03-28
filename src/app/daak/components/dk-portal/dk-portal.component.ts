@@ -7,7 +7,7 @@ import {DkVerticalMenuComponent} from '../dk-vertical-menu/dk-vertical-menu.comp
   styleUrls: ['./dk-portal.component.css']
 })
 export class DkPortalComponent implements OnInit {
-  @ViewChild('vmenu') vMenu: ElementRef<DkVerticalMenuComponent>;
+  @ViewChild('vmenu') vMenu: DkVerticalMenuComponent;//ElementRef<DkVerticalMenuComponent>;
   constructor() { }
 
   ngOnInit() {

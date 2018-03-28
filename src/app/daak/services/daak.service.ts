@@ -9,43 +9,45 @@ export class DaakService {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
-  cssAnimate(target, x, func?) {
-    target = target.nativeElement;
-    var oldAttr = target.getAttribute('class');
-    var removeClass = function (target, func) {
-      target.classList.remove('animated');
-      target.classList.remove(x);
+  cssAnimate(elem, x, func?) {
+    elem = elem.nativeElement;
+    var oldAttr = elem.getAttribute('class');
+    var removeClass = function (elem, func) {
+      elem.classList.remove('animated');
+      elem.classList.remove(x);
 
       if (func) {
-        func(target);
+        func(elem);
       }
     }
 
-    target.setAttribute('class', oldAttr + ' ' + x + ' animated');
-    this.renderer.listen(target, 'webkitAnimationEnd',
+    elem.setAttribute('class', oldAttr + ' ' + x + ' animated');
+    this.renderer.listen(elem, 'webkitAnimationEnd',
       (event) => {
-        removeClass(target, func);
+        removeClass(elem, func);
     });
 
-    this.renderer.listen(target, 'mozAnimationEnd',
+    this.renderer.listen(elem, 'mozAnimationEnd',
       (event) => {
-        removeClass(target, func);
+        removeClass(elem, func);
     });
 
-    this.renderer.listen(target, 'MSAnimationEnd',
+    this.renderer.listen(elem, 'MSAnimationEnd',
       (event) => {
-        removeClass(target, func);
+        removeClass(elem, func);
     });
 
-    this.renderer.listen(target, 'oanimationend',
+    this.renderer.listen(elem, 'oanimationend',
       (event) => {
-        removeClass(target, func);
+        removeClass(elem, func);
       });
 
-    this.renderer.listen(target, 'animationend',
+    this.renderer.listen(elem, 'animationend',
       (event) => {
-        removeClass(target, func);
+        removeClass(elem, func);
       });
   }
+
+  show
 
 }
