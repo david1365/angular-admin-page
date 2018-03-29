@@ -1,14 +1,6 @@
-<li class="daak-vertical-sub-menu open">
-  <a  href="#" da-bundle="group"><span class="glyphicon {{icon}}" ></span>{{title}}</a>
-  <ul>
-    <li daak-url="../group/searchgroup/searchgroup_view.php" >
-      <a href="#" da-bundle="group"><span  class="glyphicon glyphicon-print"></span>آبادان</a>
-    </li>
-    <li daak-url="../group/searchgroup/searchgroup_view.php" >
-      <a href="#" da-bundle="group"><span  class="glyphicon glyphicon-road"></span>ایتالیا</a>
-    </li>
-    <li daak-url="../group/searchgroup/searchgroup_view.php" >
-      <a href="#" da-bundle="group"><span  class="glyphicon glyphicon-volume-up"></span>قزوین</a>
-    </li>
+<li class="daak-vertical-sub-menu" (click)="doSubMenu($event)">
+  <a  href="#"><span class="glyphicon {{icon}}" ></span>{{title}}</a>
+  <ul #ul>
+    <ng-content></ng-content>
   </ul>
 </li>

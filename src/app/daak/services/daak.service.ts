@@ -1,11 +1,11 @@
-import {ElementRef, Injectable/*, Renderer2, RendererFactory2*/} from '@angular/core';
+import {ElementRef, Injectable, Renderer2, RendererFactory2} from '@angular/core';
 
 @Injectable()
 export class DaakService {
-  // private renderer: Renderer2;
-  constructor(/*rendererFactory: RendererFactory2*/) {
+  private renderer: Renderer2;
+  constructor(rendererFactory: RendererFactory2) {
     // window['daakEvent'] = {};
-    // this.renderer = rendererFactory.createRenderer(null, null);
+    this.renderer = rendererFactory.createRenderer(null, null);
   }
 
   removeListen(elem, event) {
@@ -49,18 +49,33 @@ export class DaakService {
   //   }
   // }
 
-  cssAnimate(elem, css, func?) {
+  cssAnimate(elem, css, func?, delay?) {
     elem = this.realElem(elem);
+    var that = this;
+
     if ((elem.animating === false) || (elem.animating === undefined)) {
       elem.animating = true;
 
-      var oldAttr = elem.getAttribute('class');
-      elem.setAttribute('class', oldAttr + ' ' + css + ' animated');
+      // var oldAttr = elem.getAttribute('class');
+      // elem.setAttribute('class', oldAttr + ' ' + css + ' daak-animated');
+      if (delay){
+        this.renderer.setStyle(elem, 'animation-duration', delay + 's');
+        this.renderer.setStyle(elem, 'animation-fill-mode', 'both');
+      }
+      else {
+        this.renderer.addClass(elem, 'animated');
+      }
+
+      this.renderer.addClass(elem, css);
 
       this.one(elem, 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
         var elem = e.target;
-        elem.classList.remove('animated');
-        elem.classList.remove(css);
+        that.renderer.removeClass(elem, 'animated');
+        that.renderer.removeClass(elem, css);
+        that.renderer.removeClass(elem, 'animation-duration');
+        that.renderer.removeClass(elem, 'animation-fill-mode');
+        // elem.classList.remove('animated');
+        // elem.classList.remove(css);
 
         if (func) { //alert('run func')
           func(elem);
@@ -105,31 +120,38 @@ export class DaakService {
     return elem instanceof ElementRef ? elem.nativeElement : elem;
   }
 
-  show(elem, css?, func?) {
+  show(elem, css?, func?, delay?) {
     elem = this.realElem(elem);
     elem.showed = true;
-    elem.style.display = 'block';
+    var that = this;
+    // elem.style.display = 'block';
+    this.renderer.setStyle(elem, 'display', 'block');
 
     if (css){
-      this.cssAnimate(elem, css, function () {
+      that.cssAnimate(elem, css, function () {
         if( func ) {
           func(elem);
         }
-      });
+      },
+      delay);
     }
   }
 
-  hide(elem, css?, func?) {
+  hide(elem, css?, func?, delay?) {
     elem = this.realElem(elem);
     elem.showed = false;
+    var that = this;
 
     if (css){
       this.cssAnimate(elem, css, function (target) {
-        target.style.display = 'none';
+        // target.style.display = 'none';
+        that.renderer.setStyle(target, 'display', 'none');
+
         if ( func ) {
           func(elem);
         }
-      });
+      },
+      delay);
 
       return;
     }
@@ -137,14 +159,14 @@ export class DaakService {
     elem.style.display = 'none';
   }
 
-  toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?) {
+  toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?,delay?) {debugger;
     elem = this.realElem(elem);
     if ((elem.animating === false) || (elem.animating === undefined)) {
       if (elem.showed) {
-        this.hide(elem, hideCss, showFunc);
+        this.hide(elem, hideCss, hideFunc, delay);
       }
       else {
-        this.show(elem, showCss, hideFunc)
+        this.show(elem, showCss, showFunc, delay)
       }
     }
   }

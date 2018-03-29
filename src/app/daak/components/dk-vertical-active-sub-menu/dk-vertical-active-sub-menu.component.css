@@ -1,0 +1,28 @@
+li {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+li:hover {
+  text-decoration: none;
+  color: rgb(50,50,50);
+  transition-duration: 0.99s;
+  background-color: rgba(148, 219, 255, 0.2);
+}
+
+a {
+  font-size: 14px;
+  color: rgb(176, 176, 176);
+  padding-right: 8px;
+}
+
+ a, a:hover, a:active, a:focus {
+  text-decoration: none !important;
+}
+
+a span {
+  font-size: 16px;
+  padding-left: 8px;
+}
