@@ -1,11 +1,22 @@
 import {ElementRef, Injectable, Renderer2, RendererFactory2} from '@angular/core';
+import {unescapeHtml} from "@angular/platform-browser/src/browser/transfer_state";
 
 @Injectable()
 export class DaakService {
   private renderer: Renderer2;
+  private _yScrolled:boolean = false;
+
   constructor(rendererFactory: RendererFactory2) {
     // window['daakEvent'] = {};
     this.renderer = rendererFactory.createRenderer(null, null);
+  }
+
+  get yScrolled(): boolean {
+    return this._yScrolled;
+  }
+
+  set yScrolled(value: boolean) {
+    this._yScrolled = value;
   }
 
   removeListen(elem, event) {
@@ -160,15 +171,104 @@ export class DaakService {
   }
 
   toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?,delay?) {
-    elem = this.realElem(elem);
-    if ((elem.animating === false) || (elem.animating === undefined)) {
-      if (elem.showed) {
-        this.hide(elem, hideCss, hideFunc, delay);
-      }
-      else {
-        this.show(elem, showCss, showFunc, delay)
+    if(!this.yScrolled) {
+      elem = this.realElem(elem);
+      if ((elem.animating === false) || (elem.animating === undefined)) {
+        if (elem.showed) {
+          this.hide(elem, hideCss, hideFunc, delay);
+        }
+        else {
+          this.show(elem, showCss, showFunc, delay)
+        }
       }
     }
   }
+
+  changedTouches(event, index) {
+    if (event.changedTouches){
+      return event.changedTouches[index];
+    }
+  }
+
+  yScrolling(elem, func?){
+    elem = this.realElem(elem);
+    elem.realElem = elem;
+
+    var y = 0;
+    var down = false;
+    var scrollTop = 0;
+    var scrlTopWheel =0;
+    var that = this;
+
+    var sensed = false;
+
+    var sensDown = (sclTop, maxScrollTop) => {
+      if ( sclTop >= maxScrollTop){
+        if (func){
+          func(that);
+        }
+      }
+    }
+
+    this.one(elem, 'mousewheel DOMMouseScroll', (event) => {
+      // var elem = event.target;
+
+      var maxScrollTop = elem.scrollHeight - elem.clientHeight;
+      var scrollTop = elem.scrollTop;
+      var wheelDelta = 'wheelDelta' in event ? event.wheelDelta : -40 * event.detail;
+
+      if (wheelDelta > 0) {
+        if(scrollTop > 0){
+          scrlTopWheel -= scrlTopWheel <= 0 ? 0 : 50;
+          elem.scrollTop = scrlTopWheel;
+        }
+      }
+      else {
+        if(scrollTop < maxScrollTop){
+          scrlTopWheel += scrlTopWheel >= maxScrollTop ? 0 : 50;
+          elem.scrollTop = scrlTopWheel;
+
+          sensed = false;
+        }
+        else if(sensed == false){
+          sensed = true;
+          sensDown(scrollTop, maxScrollTop);
+        }
+      }
+    });
+
+    this.one(elem,"mousedown touchstart", (e) =>{
+      var touchobj = that.changedTouches(e, 0);
+
+      down = true;
+      y = e.pageY || touchobj.clientY;
+      scrollTop = elem.scrollTop;
+    });
+
+    this.one(elem, "mouseup touchend", function(e){
+      down = false;
+      var touchobj = that.changedTouches(e, 0);
+
+      var maxScrollTop = this.scrollHeight - this.clientHeight;
+      sensDown(elem.scrollTop, maxScrollTop);
+
+      that.yScrolled = touchobj != undefined ? false : that.yScrolled;
+    });
+
+    this.one(elem, "mousemove touchmove", function(e){
+      var touchobj =  that.changedTouches(e, 0);
+
+      if(down){
+        that.yScrolled = true;
+        var min = scrollTop + (y - (e.pageY || touchobj.clientY));
+        elem.scrollTop = min;
+
+        scrlTopWheel = elem.scrollTop;
+      }
+      else{
+        that.yScrolled = false;
+      }
+    });
+  };
 
 }

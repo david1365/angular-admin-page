@@ -24,10 +24,10 @@ export class DkVerticalSubMenuComponent implements OnInit {
 
     this.daakService.toggle(this.ul, 'fadeIn',
       'fadeOut',
-      function () {
+      () => {
         that.renderer.addClass(subMenu, 'open');
       },
-      function () {
+      () => {
         that.renderer.removeClass(subMenu, 'open');
       },
       .2
