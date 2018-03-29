@@ -27,15 +27,12 @@
 .daak-vertical-sub-menu > ul {
   display: none;
   margin-top: 10px;
+  background-color: rgba(68, 68, 68, 0.75);
+  border-top: 1px solid #222;
 }
 
 .open {
   padding: 12px 0px 0px !important;
-}
-.open > ul {
-  /*display: block;*/
-  background-color: rgba(68, 68, 68, 0.75);
-  border-top: 1px solid #222;
 }
 
 .daak-vertical-sub-menu [class*="daak-vertical-sub-menu"] {

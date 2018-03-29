@@ -1,5 +1,5 @@
-<li class="daak-vertical-sub-menu" (click)="doSubMenu($event)">
-  <a  href="#"><span class="glyphicon {{icon}}" ></span>{{title}}</a>
+<li #subMenu class="daak-vertical-sub-menu" (click)="doSubMenu($event)">
+  <a href="#"><span class="glyphicon {{icon}}" ></span>{{title}}</a>
   <ul #ul>
     <ng-content></ng-content>
   </ul>

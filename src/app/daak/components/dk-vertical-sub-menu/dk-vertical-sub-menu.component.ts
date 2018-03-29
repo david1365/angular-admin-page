@@ -10,6 +10,7 @@ export class DkVerticalSubMenuComponent implements OnInit {
   @Input('icon') icon: string;
   @Input('title') title: string;
   @ViewChild('ul') ul: ElementRef;
+  @ViewChild('subMenu') subMenu: ElementRef;
   showed: boolean = false;
   constructor(private renderer: Renderer2, private daakService: DaakService) { }
 
@@ -18,8 +19,7 @@ export class DkVerticalSubMenuComponent implements OnInit {
 
   doSubMenu(event){
     event.stopPropagation();
-
-    var subMenu = event.target;
+    var subMenu = this.subMenu.nativeElement;
     var that = this;
     // if (!this.showed){
     //   this.renderer.addClass(subMenu, 'open');
