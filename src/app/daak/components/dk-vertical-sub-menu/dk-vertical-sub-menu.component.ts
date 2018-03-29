@@ -21,15 +21,6 @@ export class DkVerticalSubMenuComponent implements OnInit {
     event.stopPropagation();
     var subMenu = this.subMenu.nativeElement;
     var that = this;
-    // if (!this.showed){
-    //   this.renderer.addClass(subMenu, 'open');
-    //
-    //   this.showed = true;
-    // }
-    // else {
-    //   this.renderer.removeClass(subMenu, 'open');
-    //   this.showed = false;
-    // }
 
     this.daakService.toggle(this.ul, 'fadeIn',
       'fadeOut',
