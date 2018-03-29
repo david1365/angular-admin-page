@@ -1,8 +1,7 @@
 <section class="daak-portal">
   <dk-header (onMenu)="doMenu()"></dk-header>
 
-  <section id='daak-desktop' class="daak-desktop no-select" >
-
+  <dk-desktop>
     <dk-desktop-icon icon="glyphicon-phone" title="موبایل"></dk-desktop-icon>
     <dk-desktop-icon icon="glyphicon-user" title="کاربر"></dk-desktop-icon>
     <dk-desktop-icon icon="glyphicon-bell" title="زنگوله"></dk-desktop-icon>
@@ -41,7 +40,7 @@
     <!--</div>-->
     <!--<div class="message-content"></div>-->
     <!--</div>-->
-  </section>
+  </dk-desktop>
 
   <dk-vertical-menu #vmenu>
     <dk-v-sub-menu icon="glyphicon-time" title="اهواز">

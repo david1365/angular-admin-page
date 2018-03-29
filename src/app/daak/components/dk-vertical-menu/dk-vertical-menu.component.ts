@@ -1,4 +1,4 @@
-import {AfterViewInit ,Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit , Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {DaakService} from '../../services/daak.service';
 
 @Component({

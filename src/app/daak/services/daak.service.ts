@@ -192,7 +192,7 @@ export class DaakService {
 
   yScrolling(elem, func?){
     elem = this.realElem(elem);
-    elem.realElem = elem;
+    // elem.realElem = elem;
 
     var y = 0;
     var down = false;

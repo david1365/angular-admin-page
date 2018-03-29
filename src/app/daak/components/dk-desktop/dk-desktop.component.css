@@ -1,0 +1,34 @@
+.daak-desktop{
+  overflow: hidden;
+  background-image: url("../../../../assets/daak/images/back_image.png");
+  background-size: 100px;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  display:block;
+  /*padding-top: 125px;*/
+  /*margin-top: -100px;*/
+  text-align: center;
+
+  height: -webkit-calc(100% - 63px);
+  height: -moz-calc(100% - 63px);
+  height: -khtml-calc(100% - 63px);
+  height: -ms-calc(100% - 63px);
+  height: -o-calc(100% - 63px);
+  height: calc(100% - 63px);
+
+  padding: 10px;
+}
+
+@media (max-width: 617px){
+  .daak-desktop {
+    margin-top: 69px;
+
+    height: -webkit-calc(100% - 133px);
+    height: -moz-calc(100% - 133px);
+    height: -khtml-calc(100% - 133px);
+    height: -ms-calc(100% - 133px);
+    height: -o-calc(100% - 133px);
+    height: calc(100% - 133px);
+  }
+}
