@@ -159,7 +159,7 @@ export class DaakService {
     elem.style.display = 'none';
   }
 
-  toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?,delay?) {debugger;
+  toggle(elem, showCss?, hideCss?, showFunc?, hideFunc?,delay?) {
     elem = this.realElem(elem);
     if ((elem.animating === false) || (elem.animating === undefined)) {
       if (elem.showed) {
