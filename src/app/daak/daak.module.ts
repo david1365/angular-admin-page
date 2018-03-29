@@ -10,6 +10,8 @@ import {DaakService} from './services/daak.service';
 import { DkUserDetailsComponent } from './components/dk-user-details/dk-user-details.component';
 import { DkCircleMenuComponent } from './components/dk-circle-menu/dk-circle-menu.component';
 import { DkVerticalMenuComponent } from './components/dk-vertical-menu/dk-vertical-menu.component';
+import { DkVerticalSubMenuComponent } from './components/dk-vertical-sub-menu/dk-vertical-sub-menu.component';
+import { DkVerticalActiveSubMenuComponent } from './components/dk-vertical-active-sub-menu/dk-vertical-active-sub-menu.component';
 
 @NgModule({
   imports: [
@@ -35,7 +37,9 @@ import { DkVerticalMenuComponent } from './components/dk-vertical-menu/dk-vertic
     DkLogoBrandComponent,
     DkUserDetailsComponent,
     DkCircleMenuComponent,
-    DkVerticalMenuComponent
+    DkVerticalMenuComponent,
+    DkVerticalSubMenuComponent,
+    DkVerticalActiveSubMenuComponent
   ],
   providers: [
     DaakService

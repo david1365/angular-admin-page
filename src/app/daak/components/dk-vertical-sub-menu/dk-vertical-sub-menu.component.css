@@ -1,0 +1,50 @@
+.daak-vertical-sub-menu {
+  padding: 12px 0px 0px;
+  border-bottom: 1px solid rgb(56, 57, 57);
+  border-top: 1px solid #4f4f4f;
+  border-bottom: 1px solid #222;
+  border-left: 1px solid #222;
+  border-right: 1px solid #222;
+  cursor: pointer;
+}
+
+.daak-vertical-sub-menu a {
+  font-size: 14px;
+  color: rgb(176, 176, 176);
+  padding-right: 8px;
+}
+
+.daak-vertical-sub-menu a, .daak-vertical-sub-menu a:hover, .daak-vertical-sub-menu a:active, .daak-vertical-sub-menu a:focus {
+  text-decoration: none !important;
+}
+
+
+.daak-vertical-sub-menu a span {
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.daak-vertical-sub-menu > ul {
+  display: none;
+  margin-top: 10px;
+}
+
+.open > ul {
+  display: block;
+  background-color: rgba(68, 68, 68, 0.75);
+  border-top: 1px solid #222;
+}
+
+.daak-vertical-sub-menu > ul > li {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+.daak-vertical-sub-menu > ul > li:hover {
+  text-decoration: none;
+  color: rgb(50,50,50);
+  transition-duration: 0.99s;
+  background-color: rgba(148, 219, 255, 0.2);
+}
