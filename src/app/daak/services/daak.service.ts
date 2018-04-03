@@ -256,11 +256,13 @@ export class DaakService {
     });
 
     this.one(elem, "mousemove touchmove", function(e){
-      var touchobj =  that.changedTouches(e, 0);
+      var touchobj =  that.changedTouches(e, 0),
+          move = y - (e.pageY || touchobj.clientY),
+          min = scrollTop + move,
+          moved:boolean = Math.abs(move) > 10 ? true : false;
 
-      if(down){
+      if(down && moved){
         that.yScrolled = true;
-        var min = scrollTop + (y - (e.pageY || touchobj.clientY));
         elem.scrollTop = min;
 
         scrlTopWheel = elem.scrollTop;
