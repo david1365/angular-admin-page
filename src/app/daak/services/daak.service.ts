@@ -44,6 +44,12 @@ export class DaakService {
     elem = this.realElem(elem);
 
     var arrEvents = events.split(' ');
+
+    // if(arrEvents.length > 1) {
+    //   return splits.pop();
+    // } else {
+    //   return '';
+
     for (let i in arrEvents) {
       var event = arrEvents[i];
         this.removeListen(elem, event);
